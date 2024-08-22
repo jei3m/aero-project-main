@@ -9,7 +9,7 @@ export const Login = (props) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (email && pass) {
-          navigate('/grid');
+          navigate('/select');
         }
       };
 

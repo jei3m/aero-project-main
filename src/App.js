@@ -5,6 +5,9 @@ import './App.css';
 import { Login } from "./components/Login";
 import { Register } from "./components/Register";
 import Cards from './components/Cards';
+import JobWork from "./components/JobWork";
+import JobCard from "./components/JobCard";
+import WorkCard from "./components/WorkCard";
 
 
 
@@ -28,6 +31,9 @@ function App() {
        <Route path="/login" element={<Login/>}/>
        <Route path="/register" element={<Register/>}/>
        <Route path="/grid" element={<Cards/>}/>
+       <Route path="/select" element={<JobWork/>}/>
+       <Route path="/job" element={<JobCard/>}/>
+       <Route path="/work" element={<WorkCard/>}/>
       </Routes>
       </BrowserRouter>
     </div>

@@ -25,12 +25,12 @@
   .card-btn {
     text-align: center;
     width: 80%;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 0.5rem 1rem;
     background-color: #2563eb;
     color: white;
     text-decoration: none;
-    margin: 0.8rem 0.5rem;
+    margin: 0.8rem 0.7rem;
   }
   
  .grid-container {

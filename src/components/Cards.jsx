@@ -18,6 +18,15 @@ const Cards = () => {
           link="card2"
         />
 
+          <a href="login" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <Card
+          imgSrc="/img/boeing.jpeg"
+          imgAlt="Card Image 1"
+          title="Card Title"
+          description="This is the card description section. You can add more details about the product here"
+          />
+          </a>
+
         <Card
           imgSrc="/img/boeing.jpeg"
           imgAlt="Card Image 1"
