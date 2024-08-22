@@ -8,6 +8,8 @@ import Cards from './components/Cards';
 import JobWork from "./components/JobWork";
 import JobCard from "./components/JobCard";
 import WorkCard from "./components/WorkCard";
+import Document from "./components/Document";
+import Aircraft from "./components/Aircraft";
 
 
 
@@ -33,7 +35,9 @@ function App() {
        <Route path="/grid" element={<Cards/>}/>
        <Route path="/select" element={<JobWork/>}/>
        <Route path="/job" element={<JobCard/>}/>
-       <Route path="/work" element={<WorkCard/>}/>
+       <Route path="/work" element={<WorkCard/>}/>\
+       <Route path="/docs" element={<Document/>}/>
+       <Route path="/aircraft" element={<Aircraft/>}/>
       </Routes>
       </BrowserRouter>
     </div>
