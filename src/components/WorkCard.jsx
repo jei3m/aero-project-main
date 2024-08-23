@@ -10,7 +10,7 @@ const WorkCard = () => {
       <div className="grid">
       <div className="col">
 
-          <a href="aircraft" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <a href="workaircraft" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Card
           imgSrc="/img/folder.png"
           imgAlt="Card Image 1"

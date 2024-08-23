@@ -3,7 +3,7 @@ import { Container, Typography, Card, CardContent, Box, Button } from '@mui/mate
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useNavigate } from 'react-router-dom';
 
-const UploadSuccessPage = () => {
+const UploadedJobA320 = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
@@ -39,7 +39,7 @@ const UploadSuccessPage = () => {
           >
             <CheckCircleIcon style={{ color: '#4caf50', fontSize: '5rem' }} />
             <Typography variant="h5" style={{ marginTop: '20px' }}>
-              Your job card is successfully uploaded
+              AIRBUS A320 Job Card is Successfully Uploaded!
             </Typography>
             <Button
               variant="contained"
@@ -56,4 +56,4 @@ const UploadSuccessPage = () => {
   );
 };
 
-export default UploadSuccessPage;
+export default UploadedJobA320;
