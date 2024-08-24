@@ -25,7 +25,7 @@ const UploadedJobA320 = () => {
         style={{
           maxWidth: 400,
           textAlign: 'center',
-          borderRadius: '5px',
+          borderRadius: '10px',
           borderColor: '#ddd',
           boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
         }}

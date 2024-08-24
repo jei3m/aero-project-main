@@ -1,20 +1,21 @@
 .card-container {
   width: 90%; /* Use percentage for better responsiveness */
   max-width: 15rem; /* Maintain a maximum width for larger screens */
-  border-radius: 1rem;
+  border-radius: 0.6rem !important; /* Apply the border radius to the card container */
   box-shadow: 0px 10px 8px #999;
   display: flex;
   flex-direction: column;
   margin: 0.5rem auto; /* Center the card and add space around it */
   background-color: white;
   height: fit-content;
+  overflow: hidden; /* Ensure child elements respect the border radius */
 }
 
 .card-img {
   width: 100%;
-  border-radius: 1rem 1rem 0 0;
-  max-height: 150px; /* Set a specific height limit */
-  object-fit: cover; /* Ensures the image covers the area while maintaining its aspect ratio */
+  border-radius: 0rem !important;
+  max-height: 150px; 
+  object-fit: cover; 
 }
 
 .card-title {

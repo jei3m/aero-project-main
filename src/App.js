@@ -9,16 +9,14 @@ import JobWork from "./components/JobWork";
 import JobCard from "./components/JobCard";
 import WorkCard from "./components/WorkCard";
 import Document from "./components/Document";
-import Aircraft from "./components/Aircraft";
-import FileUpload from "./components/FileUpload";
-import { Upload } from "@mui/icons-material";
-import Uploaded from "./components/UploadedJob";
+
+
+
 import FileUploadA320 from "./components/Upload/FileUploadA320";
 import FileUploadA380 from "./components/Upload/FileUploadA380";
 import FileUpload747 from "./components/Upload/FileUpload747";
 import AircraftUpload from "./components/Upload/AircraftUpload";
-import UploadedJob from "./components/UploadedJob";
-import UploadedWork from "./components/UploadedWork";
+
 import JobFileUpload747 from "./components/Upload/Job/JobUpload747";
 import JobFileUploadA320 from "./components/Upload/Job/JobUploadA320";
 import JobFileUploadA380 from "./components/Upload/Job/JobUploadA380";
@@ -60,10 +58,8 @@ function App() {
        <Route path="/job" element={<JobCard/>}/>
        <Route path="/work" element={<WorkCard/>}/>\
        <Route path="/docs" element={<Document/>}/>
-       <Route path="/aircraft" element={<Aircraft/>}/>
-       <Route path="/file" element={<FileUpload/>}/>
-       <Route path="/uploadedjob" element={<UploadedJob/>}/>
-       <Route path="/uploadedwork" element={<UploadedWork/>}/>
+       
+
        <Route path="/filea320" element={<FileUploadA320/>}/>
        <Route path="/filea380" element={<FileUploadA380/>}/>
        <Route path="/file747" element={<FileUpload747/>}/>

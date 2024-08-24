@@ -37,7 +37,7 @@
     max-width: 1000px;
     padding: 1rem;
     border: solid 1px lightgray;
-    border-radius: 5px;
+    border-radius: 10px !important;
     margin: auto; /* Center horizontally and vertically */
   }
   
