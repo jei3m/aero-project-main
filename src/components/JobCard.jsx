@@ -26,7 +26,7 @@ const JobCard = () => {
           />
           </a>
 
-          <a href="aircraft" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <a href="jobviewaircraft" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Card
           imgSrc="/img/folder.png"
           imgAlt="Card Image 1"

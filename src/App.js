@@ -10,6 +10,9 @@ import JobCard from "./components/JobCard";
 import WorkCard from "./components/WorkCard";
 import Document from "./components/Document";
 
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 
 
 // import FileUploadA320 from "./components/Upload/FileUploadA320";
@@ -40,7 +43,16 @@ import WorkAircraftEdit from "./components/Edit/Work/WorkAircraftEdit";
 import A320WorkEdit from "./components/Edit/Work/A320WorkEdit";
 import A380WorkEdit from "./components/Edit/Work/A380WorkEdit";
 import WorkEdit747 from "./components/Edit/Work/747WorkEdit";
-import Pdf from "./Pdf";
+
+import A380JobView from "./components/View/Job/A380JobView";
+import A320JobView from "./components/View/Job/A320JobView";
+import JobAircraftView from "./components/View/Job/JobAircraftView";
+import JobView747 from "./components/View/Job/747JobView";
+import WorkAircraftView from "./components/View/Work/WorkAircraftView";
+import A320WorkView from "./components/View/Work/A320WorkView";
+import A380WorkView from "./components/View/Work/A380WorkView";
+import WorkView747 from "./components/View/Work/747WorkView";
+import Chat from "./Chat"
 
 
 
@@ -102,8 +114,17 @@ function App() {
        <Route path="/a380workedit" element={<A380WorkEdit/>}/>
        <Route path="/747workedit" element={<WorkEdit747/>}/>
 
-       <Route path="/pdf" element={<Pdf/>}/>
+       <Route path="/jobviewaircraft" element={<JobAircraftView/>}/>
+       <Route path="/a320jobview" element={<A320JobView/>}/>
+       <Route path="/a380jobview" element={<A380JobView/>}/>
+       <Route path="/747jobview" element={<JobView747/>}/>
 
+       <Route path="/workviewaircraft" element={<WorkAircraftView/>}/>
+       <Route path="/a320workview" element={<A320WorkView/>}/>
+       <Route path="/a380workview" element={<A380WorkView/>}/>
+       <Route path="/747workview" element={<WorkView747/>}/>
+
+       <Route path="/chat" element={<Chat/>}/>
 
 
       </Routes>

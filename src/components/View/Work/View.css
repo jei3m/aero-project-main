@@ -1,0 +1,67 @@
+/* View.css */
+.image-container {
+  text-align: center;
+  position: relative;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 1200px; /* Adjust max width as needed */
+  margin: 0 auto; /* Center the container */
+}
+
+.image-viewer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none; /* Remove background color */
+  border: none; /* Remove border if needed */
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto; /* Keeps the aspect ratio */
+  max-height: 80vh; /* Limits the height to 80% of the viewport height */
+  object-fit: contain; /* Ensures the image fits within its container */
+}
+
+/* Navigation buttons styles */
+.custom-arrow {
+  position: absolute;
+  bottom: 10px; /* Position below the carousel */
+  font-size: 2em;
+  background: rgba(0, 0, 0, 0.5); /* Background color of the button */
+  color: white; /* Arrow color */
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 1000; /* Ensure buttons are above the carousel */
+}
+
+.custom-arrow.left {
+  left: 10px; /* Adjust as needed */
+}
+
+.custom-arrow.right {
+  right: 10px; /* Adjust as needed */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .carousel-image {
+    max-height: 60vh; /* Adjust as needed for smaller screens */
+  }
+
+  .custom-arrow {
+    font-size: 1.5em; /* Adjust size for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-image {
+    max-height: 50vh; /* Further adjust for very small screens */
+  }
+
+  .custom-arrow {
+    font-size: 1.2em; /* Further adjust size for very small screens */
+  }
+}
