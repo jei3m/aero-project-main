@@ -18,7 +18,7 @@ const WorkCard = () => {
           />
           </a>
 
-          <a href="aircraft" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <a href="workeditaircraft" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Card
           imgSrc="/img/folder.png"
           imgAlt="Card Image 1"

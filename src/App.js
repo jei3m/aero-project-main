@@ -12,10 +12,10 @@ import Document from "./components/Document";
 
 
 
-import FileUploadA320 from "./components/Upload/FileUploadA320";
-import FileUploadA380 from "./components/Upload/FileUploadA380";
-import FileUpload747 from "./components/Upload/FileUpload747";
-import AircraftUpload from "./components/Upload/AircraftUpload";
+// import FileUploadA320 from "./components/Upload/FileUploadA320";
+// import FileUploadA380 from "./components/Upload/FileUploadA380";
+// import FileUpload747 from "./components/Upload/FileUpload747";
+// import AircraftUpload from "./components/Upload/AircraftUpload";
 
 import JobFileUpload747 from "./components/Upload/Job/JobUpload747";
 import JobFileUploadA320 from "./components/Upload/Job/JobUploadA320";
@@ -32,6 +32,15 @@ import UploadedWork747 from "./components/Upload/Work/747UploadedWork";
 import UploadedWorkA320 from "./components/Upload/Work/A320UploadedWork";
 import UploadedWorkA380 from "./components/Upload/Work/A380UploadedWork";
 import AccUploaded from "./components/AccUploaded";
+import JobAircraftEdit from "./components/Edit/Job/JobAircraftEdit";
+import A320JobEdit from "./components/Edit/Job/A320JobEdit";
+import A380JobEdit from "./components/Edit/Job/A380JobEdit";
+import JobEdit747 from "./components/Edit/Job/747JobEdit";
+import WorkAircraftEdit from "./components/Edit/Work/WorkAircraftEdit";
+import A320WorkEdit from "./components/Edit/Work/A320WorkEdit";
+import A380WorkEdit from "./components/Edit/Work/A380WorkEdit";
+import WorkEdit747 from "./components/Edit/Work/747WorkEdit";
+import Pdf from "./Pdf";
 
 
 
@@ -62,10 +71,10 @@ function App() {
        <Route path="/registered" element={<AccUploaded/>}/>
        
 
-       <Route path="/filea320" element={<FileUploadA320/>}/>
+       {/* <Route path="/filea320" element={<FileUploadA320/>}/>
        <Route path="/filea380" element={<FileUploadA380/>}/>
        <Route path="/file747" element={<FileUpload747/>}/>
-       <Route path="/aircraftupload" element={<AircraftUpload/>}/>
+       <Route path="/aircraftupload" element={<AircraftUpload/>}/> */}
 
        <Route path="/jobaircraft" element={<JobAircraftUpload/>}/>
        <Route path="/747jobfile" element={<JobFileUpload747/>}/>
@@ -82,6 +91,19 @@ function App() {
        <Route path="/747workupload" element={<UploadedWork747/>}/>
        <Route path="/a320workupload" element={<UploadedWorkA320/>}/>
        <Route path="/a380workupload" element={<UploadedWorkA380/>}/>
+
+       <Route path="/jobeditaircraft" element={<JobAircraftEdit/>}/>
+       <Route path="/a320jobedit" element={<A320JobEdit/>}/>
+       <Route path="/a380jobedit" element={<A380JobEdit/>}/>
+       <Route path="/747jobedit" element={<JobEdit747/>}/>
+
+       <Route path="/workeditaircraft" element={<WorkAircraftEdit/>}/>
+       <Route path="/a320workedit" element={<A320WorkEdit/>}/>
+       <Route path="/a380workedit" element={<A380WorkEdit/>}/>
+       <Route path="/747workedit" element={<WorkEdit747/>}/>
+
+       <Route path="/pdf" element={<Pdf/>}/>
+
 
 
       </Routes>

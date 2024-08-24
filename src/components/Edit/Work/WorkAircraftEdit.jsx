@@ -2,7 +2,7 @@ import React from 'react';
 import './GridUpload.css'; // Make sure to create this CSS file for styling
 import { Card } from "./Card";
 
-const AircraftUpload = () => {
+const WorkAircraftEdit = () => {
 
   return (
     <div>
@@ -10,7 +10,7 @@ const AircraftUpload = () => {
       <div className="grid">
       <div className="col">
 
-      <a href="filea320" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <a href="a320workedit" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Card
           imgSrc="/img/A320.png"
           imgAlt="AIRBUS A320"
@@ -19,7 +19,7 @@ const AircraftUpload = () => {
           />
           </a>
 
-          <a href="filea380" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <a href="a380workedit" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Card
           imgSrc="/img/A380.png"
           imgAlt="AIRBUS A380"
@@ -28,7 +28,7 @@ const AircraftUpload = () => {
           />
           </a>
 
-          <a href="file747" style={{ textDecoration: 'none', color: 'inherit' }}>
+          <a href="747workedit" style={{ textDecoration: 'none', color: 'inherit' }}>
           <Card
           imgSrc="/img/747.png"
           imgAlt="BOEING 747"
@@ -36,16 +36,9 @@ const AircraftUpload = () => {
           description=""
           />
           </a>
-
-
-        
-
-
       </div>
-
       </div>
     </div>
   );
 };
-
-export default AircraftUpload;
+export default WorkAircraftEdit;
