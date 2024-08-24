@@ -10,13 +10,13 @@ AEfficient is a modern frontend React website designed to deliver an engaging an
 
 - **PDF Embed**:
   - View and interact with PDF documents directly within the application.
-  - Utilizes `pdf.js` for rendering PDFs and `pdf.css` for styling.
+  - Utilizes `Google Drive` for rendering PDFs and `.css` for styling.
   - Provides a smooth, in-browser PDF viewing experience.
 
 - **File Upload Component**:
   - Easy-to-use interface for file uploads.
   - Features include file type validation, progress indicators, and options for canceling or saving uploads.
-  - Supports various file formats to meet diverse needs.
+  - Does not support any other files aside from PDF format.
 
 - **Viewing Functionality**:
   - Efficiently view and manage different types of content and files.
@@ -91,5 +91,6 @@ Make sure you have the following installed:
 - **React**: For providing the framework for building the user interface.
 - **Responsive Design Principles**: For ensuring the application’s usability across devices.
 - **React Router**: For enabling multi-page navigation within the application.
+- **Google Drive**: For enabling PDF embedding on the website.
 
    
