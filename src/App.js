@@ -31,6 +31,7 @@ import WorkFileUploadA380 from "./components/Upload/Work/WorkUploadA380";
 import UploadedWork747 from "./components/Upload/Work/747UploadedWork";
 import UploadedWorkA320 from "./components/Upload/Work/A320UploadedWork";
 import UploadedWorkA380 from "./components/Upload/Work/A380UploadedWork";
+import AccUploaded from "./components/AccUploaded";
 
 
 
@@ -58,6 +59,7 @@ function App() {
        <Route path="/job" element={<JobCard/>}/>
        <Route path="/work" element={<WorkCard/>}/>\
        <Route path="/docs" element={<Document/>}/>
+       <Route path="/registered" element={<AccUploaded/>}/>
        
 
        <Route path="/filea320" element={<FileUploadA320/>}/>
