@@ -32,7 +32,7 @@
     position: absolute;
     top: 10px; /* Adjust as needed */
     right: 10px; /* Adjust as needed */
-    font-size: 3em; /* Adjust size as needed */
+    font-size: 3.5em; /* Adjust size as needed */
     color: rgba(0, 0, 0, 0.6); /* Darker color for the icon */
     pointer-events: none;
     z-index: 1; /* Ensure watermark is on top of the image */
@@ -41,13 +41,13 @@
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .image-viewer::before {
-      font-size: 2em; /* Reduce icon size on smaller screens */
+      font-size: 3em; /* Reduce icon size on smaller screens */
     }
   }
   
   @media (max-width: 480px) {
     .image-viewer::before {
-      font-size: 1.5em; /* Further reduce icon size on very small screens */
+      font-size: 3em; /* Further reduce icon size on very small screens */
     }
   }
   
