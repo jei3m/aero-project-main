@@ -1,5 +1,7 @@
 import React, { useState, useRef } from 'react';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 import './View.css'; // Include custom styles
+import { FaRobot } from 'react-icons/fa'; // Import Font Awesome robot icon
 
 const JobView747 = () => {
   const imageUrl = '/img/jobcontent.png'; // Update with your image file path
@@ -51,6 +53,14 @@ const JobView747 = () => {
             transformOrigin: '0 0',
           }}
         />
+      </div>
+      <div className="ask-aerobot-container">
+        <Link to="/chat" className="ask-aerobot-button">
+          <FaRobot size={24} /> {/* Adjust the icon size as needed */}
+        </Link>
+        <div className="text-bubble">
+          Ask Aerobot
+        </div>
       </div>
     </div>
   );

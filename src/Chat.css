@@ -116,8 +116,8 @@
     border: none;
     color: #3f51b5;
     cursor: pointer;
-    font-size: 18px;
-    margin-bottom: 16px;
+    font-size: 16px; /* Adjust font size */
+    margin-bottom: 16px; /* Add margin for spacing */
     padding: 8px;
     transition: color 0.3s;
   }
@@ -127,6 +127,6 @@
   }
   
   .back-button svg {
+    font-size: 14px; /* Make the arrow smaller */
     margin-right: 8px;
   }
-  

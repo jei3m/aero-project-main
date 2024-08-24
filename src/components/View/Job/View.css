@@ -1,53 +1,96 @@
 /* image.css */
 .image-container {
-    text-align: center;
-    position: relative;
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-  }
-  
-  .image-viewer {
-    position: relative;
-    display: inline-block;
-    border: 1px solid #ddd;
-    background: #fff;
-    overflow: hidden; /* Hides scrollbars */
-    margin: 0 auto;
-    width: 100%;
-    max-width: 100%; /* Prevents the viewer from exceeding the container width */
-  }
-  
-  .image-viewer img {
-    width: 100%;
-    height: auto; /* Keeps the aspect ratio */
-    max-height: 80vh; /* Limits the height to 80% of the viewport height */
-    object-fit: contain; /* Ensures the image fits within its container */
-  }
-  
+  text-align: center;
+  position: relative;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.image-viewer {
+  position: relative;
+  display: inline-block;
+  border: 1px solid #ddd;
+  background: #fff;
+  overflow: hidden; /* Hides scrollbars */
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%; /* Prevents the viewer from exceeding the container width */
+}
+
+.image-viewer img {
+  width: 100%;
+  height: auto; /* Keeps the aspect ratio */
+  max-height: 80vh; /* Limits the height to 80% of the viewport height */
+  object-fit: contain; /* Ensures the image fits within its container */
+}
+
+.image-viewer::before {
+  content: '\f023'; /* Unicode for Font Awesome padlock icon */
+  font-family: 'Font Awesome 6 Free'; /* Font Awesome 6 Free */
+  font-weight: 900; /* Font Awesome 6 Free requires font-weight 900 for solid icons */
+  position: absolute;
+  top: 10px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  font-size: 3.5em; /* Adjust size as needed */
+  color: rgba(0, 0, 0, 0.6); /* Darker color for the icon */
+  pointer-events: none;
+  z-index: 1; /* Ensure watermark is on top of the image */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .image-viewer::before {
-    content: '\f023'; /* Unicode for Font Awesome padlock icon */
-    font-family: 'Font Awesome 6 Free'; /* Font Awesome 6 Free */
-    font-weight: 900; /* Font Awesome 6 Free requires font-weight 900 for solid icons */
-    position: absolute;
-    top: 10px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-    font-size: 3.5em; /* Adjust size as needed */
-    color: rgba(0, 0, 0, 0.6); /* Darker color for the icon */
-    pointer-events: none;
-    z-index: 1; /* Ensure watermark is on top of the image */
+    font-size: 3em; /* Reduce icon size on smaller screens */
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .image-viewer::before {
-      font-size: 3em; /* Reduce icon size on smaller screens */
-    }
+}
+
+@media (max-width: 480px) {
+  .image-viewer::before {
+    font-size: 3em; /* Further reduce icon size on very small screens */
   }
-  
-  @media (max-width: 480px) {
-    .image-viewer::before {
-      font-size: 3em; /* Further reduce icon size on very small screens */
-    }
-  }
-  
+}
+
+/* New styles for Ask Aerobot button and text bubble */
+.ask-aerobot-container {
+  position: fixed; /* Fix position */
+  bottom: 30px; /* Increased bottom spacing */
+  right: 30px; /* Increased right spacing */
+  display: flex;
+  align-items: center;
+}
+
+.ask-aerobot-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #007bff; /* Blue background */
+  color: white;
+  width: 60px; /* Increased size */
+  height: 60px; /* Increased size */
+  border-radius: 50%; /* Makes the button circular */
+  text-decoration: none;
+  font-size: 30px; /* Increased icon size */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Optional shadow */
+}
+
+.ask-aerobot-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.text-bubble {
+  background-color: #333; /* Dark background for the bubble */
+  color: white;
+  padding: 15px; /* Increased padding */
+  border-radius: 20px; /* Rounded corners */
+  margin-left: 15px; /* Increased space between button and bubble */
+  font-size: 16px; /* Increased font size */
+  position: relative;
+  max-width: 250px; /* Increased max width */
+  text-align: center; /* Center text inside the bubble */
+}
+
+/* Removed the triangle arrow */
+.text-bubble::before {
+  content: none;
+}

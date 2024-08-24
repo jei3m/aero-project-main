@@ -38,6 +38,15 @@ const WorkView747 = () => {
           </div>
         ))}
       </Slider>
+      {/* Add Chathead and Text Bubble */}
+      <div className="ask-aerobot-container">
+        <a href="/chat" className="ask-aerobot-button">
+          <i className="fa fa-robot"></i> {/* Adjust the icon as needed */}
+        </a>
+        <div className="text-bubble">
+          Ask Aerobot
+        </div>
+      </div>
     </div>
   );
 };

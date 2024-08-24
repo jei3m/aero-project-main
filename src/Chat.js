@@ -90,7 +90,7 @@ const Chat = () => {
         <h2>Ask Aerobot!</h2>
       </div>
       <button className="back-button" onClick={goBack}>
-        <FontAwesomeIcon icon={faArrowLeft} size="lg" />
+        <FontAwesomeIcon icon={faArrowLeft} />
         Back
       </button>
       <div className="messages-container">
