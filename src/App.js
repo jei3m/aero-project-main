@@ -8,18 +8,8 @@ import Cards from './components/Cards';
 import JobWork from "./components/JobWork";
 import JobCard from "./components/JobCard";
 import WorkCard from "./components/WorkCard";
-import Document from "./components/Document";
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-
-
-// import FileUploadA320 from "./components/Upload/FileUploadA320";
-// import FileUploadA380 from "./components/Upload/FileUploadA380";
-// import FileUpload747 from "./components/Upload/FileUpload747";
-// import AircraftUpload from "./components/Upload/AircraftUpload";
-
 import JobFileUpload747 from "./components/Upload/Job/JobUpload747";
 import JobFileUploadA320 from "./components/Upload/Job/JobUploadA320";
 import JobFileUploadA380 from "./components/Upload/Job/JobUploadA380";
@@ -43,7 +33,6 @@ import WorkAircraftEdit from "./components/Edit/Work/WorkAircraftEdit";
 import A320WorkEdit from "./components/Edit/Work/A320WorkEdit";
 import A380WorkEdit from "./components/Edit/Work/A380WorkEdit";
 import WorkEdit747 from "./components/Edit/Work/747WorkEdit";
-
 import A380JobView from "./components/View/Job/A380JobView";
 import A320JobView from "./components/View/Job/A320JobView";
 import JobAircraftView from "./components/View/Job/JobAircraftView";
@@ -53,8 +42,6 @@ import A320WorkView from "./components/View/Work/A320WorkView";
 import A380WorkView from "./components/View/Work/A380WorkView";
 import WorkView747 from "./components/View/Work/747WorkView";
 import Chat from "./Chat"
-
-
 
 
 function App() {
@@ -79,14 +66,7 @@ function App() {
        <Route path="/select" element={<JobWork/>}/>
        <Route path="/job" element={<JobCard/>}/>
        <Route path="/work" element={<WorkCard/>}/>\
-       <Route path="/docs" element={<Document/>}/>
        <Route path="/registered" element={<AccUploaded/>}/>
-       
-
-       {/* <Route path="/filea320" element={<FileUploadA320/>}/>
-       <Route path="/filea380" element={<FileUploadA380/>}/>
-       <Route path="/file747" element={<FileUpload747/>}/>
-       <Route path="/aircraftupload" element={<AircraftUpload/>}/> */}
 
        <Route path="/jobaircraft" element={<JobAircraftUpload/>}/>
        <Route path="/747jobfile" element={<JobFileUpload747/>}/>
@@ -123,7 +103,6 @@ function App() {
        <Route path="/a320workview" element={<A320WorkView/>}/>
        <Route path="/a380workview" element={<A380WorkView/>}/>
        <Route path="/747workview" element={<WorkView747/>}/>
-
        <Route path="/chat" element={<Chat/>}/>
 
 
