@@ -5,7 +5,6 @@ const Pdf = () => {
   const imageUrl = '/img/jobcontent.png'; // Update with your image file path
   const [scale, setScale] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [startPosition, setStartPosition] = useState(null);
   const containerRef = useRef(null);
 
   const handleWheel = (e) => {
@@ -35,56 +34,6 @@ const Pdf = () => {
     document.addEventListener('mouseup', handleMouseUp);
   };
 
-  const handleTouchStart = (e) => {
-    if (e.touches.length === 1) {
-      const touch = e.touches[0];
-      setStartPosition({
-        x: touch.clientX - position.x,
-        y: touch.clientY - position.y
-      });
-    } else if (e.touches.length === 2) {
-      const [touch1, touch2] = e.touches;
-      const initialDistance = Math.hypot(
-        touch2.clientX - touch1.clientX,
-        touch2.clientY - touch1.clientY
-      );
-      setStartPosition({
-        x: (touch1.clientX + touch2.clientX) / 2 - position.x,
-        y: (touch1.clientY + touch2.clientY) / 2 - position.y,
-        initialDistance
-      });
-    }
-  };
-
-  const handleTouchMove = (e) => {
-    if (startPosition) {
-      if (e.touches.length === 1) {
-        const touch = e.touches[0];
-        setPosition({
-          x: touch.clientX - startPosition.x,
-          y: touch.clientY - startPosition.y
-        });
-      } else if (e.touches.length === 2) {
-        const [touch1, touch2] = e.touches;
-        const newDistance = Math.hypot(
-          touch2.clientX - touch1.clientX,
-          touch2.clientY - touch1.clientY
-        );
-        const scaleChange = newDistance / startPosition.initialDistance;
-        setScale(prevScale => Math.min(Math.max(prevScale * scaleChange, 1), 3));
-        setStartPosition({
-          x: (touch1.clientX + touch2.clientX) / 2 - position.x,
-          y: (touch1.clientY + touch2.clientY) / 2 - position.y,
-          initialDistance: startPosition.initialDistance
-        });
-      }
-    }
-  };
-
-  const handleTouchEnd = () => {
-    setStartPosition(null);
-  };
-
   return (
     <div className="image-container">
       <h1>View</h1>
@@ -93,9 +42,6 @@ const Pdf = () => {
         ref={containerRef}
         onWheel={handleWheel}
         onMouseDown={handleMouseDown}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
       >
         <img
           src={imageUrl}
