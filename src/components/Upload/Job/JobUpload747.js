@@ -12,8 +12,9 @@ function JobFileUpload747() {
     setSelectedFile(e.target.files[0]); // Store the selected file in state
   };
 
-  const onDeleteFileHandler = () => {
+  const onCancelHandler = () => {
     setSelectedFile(null); // Clear the selected file
+    navigate(-1); // Navigate to the previous page
   };
 
   const onDownloadTemplate = () => {
@@ -41,7 +42,7 @@ function JobFileUpload747() {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <Typography align='left' variant="h6">Upload Document</Typography>
-              <FileUploader onSelectFile={onSelectFileHandler} onDeleteFile={onDeleteFileHandler} />
+              <FileUploader onSelectFile={onSelectFileHandler} onDeleteFile={onCancelHandler} />
             </Grid>
 
             <Grid item xs={12} p={2} align='left'>
@@ -57,7 +58,7 @@ function JobFileUpload747() {
               <Button
                 variant="outlined"
                 style={{ marginLeft: "1rem" }}
-                onClick={onDeleteFileHandler} // Reuse delete handler for cancel
+                onClick={onCancelHandler} // Use cancel handler for cancel button
               >
                 Cancel
               </Button>

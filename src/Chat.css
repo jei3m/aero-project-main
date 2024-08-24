@@ -96,7 +96,21 @@
     .messages-container {
         max-height: calc(100vh - 140px); /* Adjust for mobile view */
     }
+
+    .profile-pic {
+        width: 35px; /* Adjust profile picture size for mobile */
+        height: 35px;
+        margin-right: 8px;
+    }
 }
+
+.profile-pic {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
 
 .chat-title {
     text-align: center;
