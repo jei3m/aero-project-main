@@ -76,7 +76,7 @@
 @media (max-width: 768px) {
     .chat-container {
         padding: 16px; /* Increase padding */
-        max-width: 100%; /* Full width on small screens */
+        max-width: 90%; /* Full width on small screens */
         height: 90vh;
     }
 
