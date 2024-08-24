@@ -21,7 +21,7 @@ export const Login = (props) => {
             <div className="Appcardform">
                 <div>
                     <img 
-                        src="/img/airplane.jpeg" 
+                    src="/img/alogo.png" 
                         alt="Login Illustration" 
                         className="profile-image"
                     />

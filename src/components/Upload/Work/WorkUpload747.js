@@ -18,8 +18,8 @@ function WorkFileUpload747() {
 
   const onDownloadTemplate = () => {
     const link = document.createElement('a');
-    link.href = '/files/testing.pdf'; // Replace with your file path
-    link.download = 'testing.pdf'; // File name
+    link.href = '/files/WorkTemplate.pdf'; // Replace with your file path
+    link.download = 'WorkTemplate.pdf'; // File name
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

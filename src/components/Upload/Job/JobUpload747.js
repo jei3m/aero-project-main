@@ -18,8 +18,8 @@ function JobFileUpload747() {
 
   const onDownloadTemplate = () => {
     const link = document.createElement('a');
-    link.href = '/files/testing.pdf'; // Replace with your file path
-    link.download = 'testing.pdf'; // File name
+    link.href = '/files/JobTemplate.pdf'; // Replace with your file path
+    link.download = 'JobTemplate.pdf'; // File name
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

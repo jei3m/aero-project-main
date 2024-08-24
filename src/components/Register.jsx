@@ -24,7 +24,7 @@ export const Register = (props) => {
             <div className="Appcardform"> {/* Updated class name to match login */}
                 <div>
                     <img 
-                        src="/img/airplane.jpeg" 
+                        src="/img/alogo.png" 
                         alt="Profile" 
                         className="profile-image"
                     />
