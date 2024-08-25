@@ -1,7 +1,10 @@
+/* Chat.css */
+
+/* Chat container */
 .chat-container {
     padding: 24px; /* Increase padding for a more spacious feel */
     background-color: #f0f0f0;
-    height: 80vh; /* Set a fixed height */
+    height: 60vh; /* Set a fixed height */
     max-width: 500px; /* Increase maximum width */
     margin: auto;
     display: flex;
@@ -16,6 +19,15 @@
     flex: 1;
     overflow-y: auto;
     margin-bottom: 20px; /* Increase margin for more spacing */
+    
+    /* Hide scrollbar for WebKit browsers */
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
+}
+
+/* Hide scrollbar for WebKit browsers */
+.messages-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in WebKit-based browsers */
 }
 
 .message {
@@ -29,7 +41,7 @@
 }
 
 .message.user {
-    background-color: #3f51b5;
+    background-color: #87ceeb;
     color: #fff;
     text-align: right;
     margin-left: auto;
@@ -43,18 +55,39 @@
 
 .input-container {
     display: flex;
-    align-items: center;
+    align-items: stretch; /* Ensure both input and button are of equal height */
     gap: 12px; /* Increase gap for better spacing */
     padding-top: 12px; /* Increase padding */
 }
 
-.icon-button {
-    padding: 12px; /* Increase padding */
-    background: #3f51b5;
+.search-button {
+    background: #87ceeb; /* Light blue color */
     border: none;
     border-radius: 12px;
     color: #fff;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Match the height of the input container */
+    min-width: 60px; /* Ensure button is large enough */
+    padding: 0 16px; /* Add horizontal padding */
+}
+
+/* Loading spinner */
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1); /* Light grey */
+    border-left: 4px solid #fff; /* White */
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .message-input {
@@ -65,42 +98,6 @@
     color: white;
     border: none;
     font-size: 18px; /* Increase font size */
-}
-
-.loading-spinner {
-    margin-left: 12px; /* Increase margin */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .chat-container {
-        padding: 16px; /* Increase padding */
-        max-width: 90%; /* Full width on small screens */
-        height: 80vh; /* Increase height on small screens */
-    }
-
-    .message-input {
-        font-size: 16px; /* Increase font size */
-        height: 50px; /* Increase height */
-    }
-
-    .icon-button {
-        padding: 8px; /* Increase padding */
-    }
-
-    .message {
-        font-size: 16px; /* Increase font size */
-    }
-
-    .messages-container {
-        max-height: calc(100vh - 140px); /* Adjust for mobile view */
-    }
-
-    .profile-pic {
-        width: 35px; /* Adjust profile picture size for mobile */
-        height: 35px;
-        margin-right: 8px;
-    }
 }
 
 .profile-pic {
@@ -141,4 +138,36 @@
 .back-button svg {
     font-size: 14px; /* Make the arrow smaller */
     margin-right: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .chat-container {
+        padding: 16px; /* Increase padding */
+        max-width: 90%; /* Full width on small screens */
+        height: 80vh; /* Increase height on small screens */
+    }
+
+    .message-input {
+        font-size: 16px; /* Increase font size */
+        height: 50px; /* Increase height */
+    }
+
+    .search-button {
+        padding: 0 8px; /* Adjust padding for smaller screens */
+    }
+
+    .message {
+        font-size: 16px; /* Increase font size */
+    }
+
+    .messages-container {
+        max-height: calc(100vh - 140px); /* Adjust for mobile view */
+    }
+
+    .profile-pic {
+        width: 35px; /* Adjust profile picture size for mobile */
+        height: 35px;
+        margin-right: 8px;
+    }
 }

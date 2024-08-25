@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import { faArrowLeft, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
@@ -116,7 +116,17 @@ const Chat = () => {
           value={userInput}
           onKeyDown={(e) => e.key === "Enter" && sendMessage()}
         />
-        {loading && <div className="loading-spinner">Loading...</div>}
+        <button
+          className="search-button"
+          onClick={sendMessage}
+          disabled={loading}
+        >
+          {loading ? (
+            <div className="loading-spinner"></div>
+          ) : (
+            <FontAwesomeIcon icon={faSearch} />
+          )}
+        </button>
       </div>
     </div>
   );
