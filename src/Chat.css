@@ -41,7 +41,7 @@
 }
 
 .message.user {
-    background-color: #87ceeb;
+    background-color: #3693f7;
     color: #fff;
     text-align: right;
     margin-left: auto;
@@ -61,7 +61,7 @@
 }
 
 .search-button {
-    background: #87ceeb; /* Light blue color */
+    background: #3693f7; 
     border: none;
     border-radius: 12px;
     color: #fff;

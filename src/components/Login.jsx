@@ -6,22 +6,22 @@ export const Login = (props) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        if (email && pass) {
-          navigate('/select');
-        }
-    };
-
     const navigate = useNavigate();
     const isFormValid = email !== '' && pass !== '';
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if (isFormValid) {
+            navigate('/select');
+        }
+    };
 
     return (
         <div className="Appokform">
             <div className="Appcardform">
                 <div>
                     <img 
-                    src="/img/alogo.png" 
+                        src="/img/alogo.png" 
                         alt="Login Illustration" 
                         className="profile-image"
                     />
@@ -44,7 +44,13 @@ export const Login = (props) => {
                         id="password" 
                         name="password" 
                     />
-                    <button className="buttonform" type="submit" disabled={!isFormValid}>Log In</button>
+                    <button 
+                        className={`buttonform ${isFormValid ? 'active' : 'inactive'}`} 
+                        type="submit" 
+                        disabled={!isFormValid}
+                    >
+                        Log In
+                    </button>
                 </form>
                 <button className="link-btn" onClick={() => navigate('/register')}>
                     Don't have an account? Register here.

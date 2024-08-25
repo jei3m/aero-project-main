@@ -49,6 +49,11 @@ const Chat = () => {
   }, [API_KEY, messages.length]);
 
   const sendMessage = async () => {
+    if (!userInput.trim()) {
+      toast.warning("Please type a message before sending.");
+      return;
+    }
+
     setLoading(true);
     const userMessage = { text: userInput, user: true };
 

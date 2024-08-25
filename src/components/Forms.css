@@ -46,13 +46,19 @@ input {
 .buttonform {
     border: none;
     margin: 0.5rem 0;
-    background-color: #3693f7;
+    background-color: #3693f7; /* Default color */
     padding: 1rem;
     border-radius: 10px;
     cursor: pointer;
     color: #ffffff;
     width: 100%; /* Set to 100% to align with form width */
     max-width: 400px; /* Adjust the max-width if needed */
+    transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
+
+.buttonform:disabled {
+    background-color: #d3d3d3; /* Gray color when disabled */
+    cursor: not-allowed;
 }
 
 .link-btn {
