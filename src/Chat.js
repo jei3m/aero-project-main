@@ -12,8 +12,15 @@ const Chat = () => {
   const [userInput, setUserInput] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_KEY = "AIzaSyAJMB-Jlx9cukKN1ENx-YN51WRhEqjveyI";
+  const API_KEY = process.env.REACT_APP_API_KEY; // Ensure this is set in Vercel environment variables
   const navigate = useNavigate();
+
+  // Utility function to sanitize the text
+  const sanitizeText = (text) => {
+    return text
+      .replace(/\*/g, '') // Remove all asterisks
+      .replace(/\{\{frac\}\}/g, ''); // Remove {{frac}} or replace with a suitable alternative
+  };
 
   useEffect(() => {
     const startChat = async () => {
@@ -28,7 +35,7 @@ const Chat = () => {
 
           setMessages([
             {
-              text,
+              text: sanitizeText(text),
               user: false,
             },
           ]);
@@ -37,6 +44,7 @@ const Chat = () => {
         }
       }
     };
+
     startChat();
   }, [API_KEY, messages.length]);
 
@@ -54,7 +62,10 @@ const Chat = () => {
       const response = result.response;
       const text = await response.text();
 
-      setMessages(prevMessages => [...prevMessages, { text, user: false }]);
+      setMessages(prevMessages => [
+        ...prevMessages,
+        { text: sanitizeText(text), user: false },
+      ]);
     } catch (error) {
       toast.error("Error sending message.");
     } finally {
