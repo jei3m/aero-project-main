@@ -1,5 +1,4 @@
 import React from 'react';
-import './GridUpload.css'; // Make sure to create this CSS file for styling
 import { Card } from "./Card";
 
 const WorkAircraftView = () => {

@@ -1,7 +1,5 @@
 import React from "react";
 
-import "./GridUpload.css";
-
 export const Card = ({
   imgSrc,
   imgAlt,

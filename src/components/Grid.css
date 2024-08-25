@@ -14,8 +14,8 @@
 .card-img {
   width: 100%;
   border-radius: 0rem !important;
-  max-height: 150px; 
-  object-fit: cover; 
+  max-height: 140px !important; 
+  object-fit: contain !important; 
 }
 
 .card-title {
@@ -38,15 +38,6 @@
   margin: 0.8rem 0.7rem;
 }
 
-.grid-container {
-  text-align: center;
-  padding: 10px;
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-}
-
 .title {
   font-size: 2rem;
   margin-bottom: 15px;
@@ -59,27 +50,6 @@
   gap: 15px;
   justify-items: center;
   justify-content: center;
-}
-
-.card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  overflow: hidden;
-  width: 100%;
-  max-width: 280px; /* Reduced max-width for smaller card */
-}
-
-.card-image {
-  padding: 10px;
-  width: 80%;
-  height: auto;
-  border-radius: 20px;
-}
-
-.card-text {
-  padding: 10px;
-  font-size: 1rem;
 }
 
 .col {
@@ -100,5 +70,6 @@
   .col > .card {
     flex: 1 1 100%; /* One item per row */
     max-width: 100%;
+
   }
 }
