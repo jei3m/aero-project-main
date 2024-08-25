@@ -89,51 +89,51 @@ const Chat = () => {
 
   return (
     <div className="chat-container">
-      <ToastContainer />
-      <div className="chat-title">
-        <h2>Ask Aerobot!</h2>
-      </div>
+    <ToastContainer />
+    <div className="header">
+      <h2>Ask Aerobot!</h2>
       <button className="back-button" onClick={goBack}>
         <FontAwesomeIcon icon={faArrowLeft} />
         Back
       </button>
-      <div className="messages-container">
-        {messages.map((msg, index) => (
-          <div key={index} className={`message-container ${msg.user ? 'user' : 'ai'}`}>
-            {!msg.user && (
-              <img
-                src="/img/aerobot.png"
-                alt="profile"
-                className="profile-pic"
-              />
-            )}
-            <div className={`message ${msg.user ? 'user' : 'ai'}`}>
-              {msg.text}
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="input-container">
-        <input
-          className="message-input"
-          placeholder="Type a message"
-          onChange={(e) => setUserInput(e.target.value)}
-          value={userInput}
-          onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-        />
-        <button
-          className="search-button"
-          onClick={sendMessage}
-          disabled={loading}
-        >
-          {loading ? (
-            <div className="loading-spinner"></div>
-          ) : (
-            <FontAwesomeIcon icon={faSearch} />
-          )}
-        </button>
-      </div>
     </div>
+    <div className="messages-container">
+      {messages.map((msg, index) => (
+        <div key={index} className={`message-container ${msg.user ? 'user' : 'ai'}`}>
+          {!msg.user && (
+            <img
+              src="/img/aerobot.png"
+              alt="profile"
+              className="profile-pic"
+            />
+          )}
+          <div className={`message ${msg.user ? 'user' : 'ai'}`}>
+            {msg.text}
+          </div>
+        </div>
+      ))}
+    </div>
+    <div className="input-container">
+      <input
+        className="message-input"
+        placeholder="Type a message"
+        onChange={(e) => setUserInput(e.target.value)}
+        value={userInput}
+        onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+      />
+      <button
+        className="search-button"
+        onClick={sendMessage}
+        disabled={loading}
+      >
+        {loading ? (
+          <div className="loading-spinner"></div>
+        ) : (
+          <FontAwesomeIcon icon={faSearch} />
+        )}
+      </button>
+    </div>
+  </div>
   );
 };
 

@@ -65,3 +65,66 @@
     font-size: 1.2em; /* Further adjust size for very small screens */
   }
 }
+
+/* New styles for Ask Aerobot button and text bubble */
+.ask-aerobot-container {
+  position: fixed; /* Fix position */
+  bottom: 30px; /* Increased bottom spacing */
+  right: 15px; /* Move closer to text bubble */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between button and bubble */
+}
+
+.ask-aerobot-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent; /* Transparent background */
+  border: none; /* No border */
+  width: 80px; /* Size of the button */
+  height: 80px; /* Size of the button */
+  border-radius: 50%; /* Circular button */
+  text-decoration: none;
+  box-shadow: none; /* No shadow */
+  cursor: pointer;
+  animation: pulse 1.5s infinite; /* Add pulse animation */
+}
+
+.ask-aerobot-button img {
+  width: 100%; /* Fill the button */
+  height: 100%; /* Fill the button */
+  border-radius: 30%;
+  object-fit: contain !important; 
+}
+
+/* Animation for the button */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.text-bubble {
+  background-color: #333; /* Dark background for the bubble */
+  color: white;
+  padding: 15px; /* Increased padding */
+  border-radius: 20px; /* Rounded corners */
+  margin-left: 1px; /* Closer to button */
+  margin-right: 10px; /* Closer to button */
+  font-size: 16px; /* Increased font size */
+  position: relative;
+  max-width: 250px; /* Increased max width */
+  text-align: center; /* Center text inside the bubble */
+}
+
+/* Removed the triangle arrow */
+.text-bubble::before {
+  content: none;
+}

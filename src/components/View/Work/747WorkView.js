@@ -15,7 +15,7 @@ const WorkView747 = () => {
 
   const settings = {
     dots: true, // Show navigation dots
-    infinite: true, // Loop through images
+    infinite: imageUrls.length > 1,
     speed: 500, // Transition speed
     slidesToShow: 1, // Number of images to show at once
     slidesToScroll: 1, // Number of images to scroll
@@ -40,11 +40,15 @@ const WorkView747 = () => {
       </Slider>
       {/* Add Chathead and Text Bubble */}
       <div className="ask-aerobot-container">
-        <a href="/chat" className="ask-aerobot-button">
-          <i className="fa fa-robot"></i> {/* Adjust the icon as needed */}
+      <a href="/chat" className="ask-aerobot-button">
+        <img
+              src="/img/askaero.png"
+              alt="profile"
+              className="profile-pic"
+            />
         </a>
         <div className="text-bubble">
-          Ask Aerobot
+          Ask Aerobot!
         </div>
       </div>
     </div>

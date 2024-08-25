@@ -1,69 +1,54 @@
-import React, { useState, useRef } from 'react';
-import { Link } from 'react-router-dom'; // Import Link for navigation
-import './View.css'; // Include custom styles
-import { FaRobot } from 'react-icons/fa'; // Import Font Awesome robot icon
+import React from 'react';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 
 const A380JobView = () => {
-  const imageUrl = '/img/jobcontent.png'; // Update with your image file path
-  const [scale, setScale] = useState(1);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const containerRef = useRef(null);
+  const imageUrls = [
+    '/img/jobcontent.png',
+  ];
 
-  const handleWheel = (e) => {
-    e.preventDefault();
-    const zoom = e.deltaY > 0 ? 0.9 : 1.1;
-    setScale(prevScale => Math.min(Math.max(prevScale * zoom, 1), 3)); // Limits scale between 1x and 3x
-  };
-
-  const handleMouseDown = (e) => {
-    e.preventDefault();
-    const startX = e.clientX - position.x;
-    const startY = e.clientY - position.y;
-
-    const handleMouseMove = (e) => {
-      setPosition({
-        x: e.clientX - startX,
-        y: e.clientY - startY
-      });
-    };
-
-    const handleMouseUp = () => {
-      document.removeEventListener('mousemove', handleMouseMove);
-      document.removeEventListener('mouseup', handleMouseUp);
-    };
-
-    document.addEventListener('mousemove', handleMouseMove);
-    document.addEventListener('mouseup', handleMouseUp);
+  const settings = {
+    dots: true, // Show navigation dots
+    infinite: imageUrls.length > 1, // Disable infinite loop if only one image
+    speed: 500, // Transition speed
+    slidesToShow: 1, // Number of images to show at once
+    slidesToScroll: 1, // Number of images to scroll
+    arrows: true, // Enable custom arrows
+    prevArrow: <button className="custom-arrow left">←</button>,
+    nextArrow: <button className="custom-arrow right">→</button>,
   };
 
   return (
     <div className="image-container">
       <h1>View A380 Job Card</h1>
-      <div
-        className="image-viewer"
-        ref={containerRef}
-        onWheel={handleWheel}
-        onMouseDown={handleMouseDown}
-      >
-        <img
-          src={imageUrl}
-          alt="View"
-          style={{
-            transform: `scale(${scale}) translate(${position.x}px, ${position.y}px)`,
-            transformOrigin: '0 0',
-          }}
-        />
-      </div>
+      <Slider {...settings}>
+        {imageUrls.map((url, index) => (
+          <div key={index} className="image-viewer">
+            <img
+              src={url}
+              alt={`View ${index}`}
+              className="carousel-image"
+            />
+          </div>
+        ))}
+      </Slider>
+      {/* Add Chathead and Text Bubble */}
       <div className="ask-aerobot-container">
-        <Link to="/chat" className="ask-aerobot-button">
-          <FaRobot size={24} /> {/* Adjust the icon size as needed */}
-        </Link>
+        <a href="/chat" className="ask-aerobot-button">
+          <img
+            src="/img/askaero.png"
+            alt="profile"
+            className="profile-pic"
+          />
+        </a>
         <div className="text-bubble">
-          Ask Aerobot
+          Ask Aerobot!
         </div>
       </div>
     </div>
   );
-}
+};
 
 export default A380JobView;
