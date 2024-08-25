@@ -27,7 +27,7 @@ const Chat = () => {
       if (messages.length === 0) {
         try {
           const genAI = new GoogleGenerativeAI(API_KEY);
-          const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+          const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
           const prompt = "hello!";
           const result = await model.generateContent(prompt);
           const response = result.response;
@@ -61,7 +61,7 @@ const Chat = () => {
 
     try {
       const genAI = new GoogleGenerativeAI(API_KEY);
-      const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+      const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
       const prompt = userMessage.text;
       const result = await model.generateContent(prompt);
       const response = result.response;

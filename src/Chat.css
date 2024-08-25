@@ -7,6 +7,7 @@
     background-color: #f0f0f0;
     height: 80vh; /* Set a fixed height */
     max-width: 500px; /* Increase maximum width */
+    min-width: 350px; /* Increase maximum width */
     margin: auto;
     display: flex;
     flex-direction: column;
