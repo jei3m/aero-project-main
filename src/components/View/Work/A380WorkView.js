@@ -3,6 +3,8 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './View.css'; // Include custom styles
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 const A380WorkView = () => {
   const imageUrls = [
@@ -26,26 +28,32 @@ const A380WorkView = () => {
 
   return (
     <div className="image-container">
+      {/* Lock Icon */}
+      <div className="lock-icon-container">
+        <FontAwesomeIcon icon={faLock} className="lock-icon" />
+      </div>
       <h1>View A380 Work Card</h1>
-      <Slider {...settings}>
-        {imageUrls.map((url, index) => (
-          <div key={index} className="image-viewer">
-            <img
-              src={url}
-              alt={`View ${index}`}
-              className="carousel-image"
-            />
-          </div>
-        ))}
-      </Slider>
+      <div className="carousel-container">
+        <Slider {...settings}>
+          {imageUrls.map((url, index) => (
+            <div key={index} className="image-viewer">
+              <img
+                src={url}
+                alt={`View ${index}`}
+                className="carousel-image"
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
       {/* Add Chathead and Text Bubble */}
       <div className="ask-aerobot-container">
         <a href="/chat" className="ask-aerobot-button">
-        <img
-              src="/img/askaero.png"
-              alt="profile"
-              className="profile-pic"
-            />
+          <img
+            src="/img/askaero.png"
+            alt="profile"
+            className="profile-pic"
+          />
         </a>
         <div className="text-bubble">
           Ask Aerobot!

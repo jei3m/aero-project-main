@@ -2,6 +2,8 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLock } from '@fortawesome/free-solid-svg-icons';
 
 
 const A380JobView = () => {
@@ -23,6 +25,9 @@ const A380JobView = () => {
   return (
     <div className="image-container">
       <h1>View A380 Job Card</h1>
+      <div className="lock-icon-container">
+        <FontAwesomeIcon icon={faLock} className="lock-icon" />
+      </div> 
       <Slider {...settings}>
         {imageUrls.map((url, index) => (
           <div key={index} className="image-viewer">

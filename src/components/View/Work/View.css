@@ -1,4 +1,5 @@
 /* View.css */
+
 .image-container {
   text-align: center;
   position: relative;
@@ -7,6 +8,17 @@
   width: 100%;
   max-width: 1200px; /* Adjust max width as needed */
   margin: 0 auto; /* Center the container */
+}
+
+/* Lock Icon Position */
+.lock-icon-container {
+  position: absolute; /* Absolute position relative to the image-container */
+  top: 10px; /* Distance from the top */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for exact centering */
+  font-size: 30px; /* Adjust size as needed */
+  color: #333; /* Adjust color as needed */
+  z-index: 1000; /* Ensure the lock icon is above other content */
 }
 
 .image-viewer {
@@ -54,6 +66,10 @@
   .custom-arrow {
     font-size: 1.5em; /* Adjust size for smaller screens */
   }
+
+  .lock-icon-container {
+    font-size: 30px; /* Adjust size for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
@@ -63,6 +79,10 @@
 
   .custom-arrow {
     font-size: 1.2em; /* Further adjust size for very small screens */
+  }
+
+  .lock-icon-container {
+    font-size: 30px; /* Further adjust size for very small screens */
   }
 }
 
