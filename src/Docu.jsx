@@ -1,5 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
+import 'ckeditor5/ckeditor5.css';
+import './Docu.css';
 
 import {
 	InlineEditor,
@@ -25,20 +27,21 @@ import {
 	Undo
 } from 'ckeditor5';
 
-import 'ckeditor5/ckeditor5.css';
-
-import './Docu.css';
-
 export default function Docu() {
 	const editorContainerRef = useRef(null);
 	const editorRef = useRef(null);
 	const [isLayoutReady, setIsLayoutReady] = useState(false);
+	const [editorData, setEditorData] = useState('');
 
 	useEffect(() => {
 		setIsLayoutReady(true);
 
 		return () => setIsLayoutReady(false);
 	}, []);
+
+	const handleEditorDataChange = (event, editor) => {
+		setEditorData(editor.getData());
+	};
 
 	const editorConfig = {
 		toolbar: {
@@ -129,74 +132,7 @@ export default function Docu() {
 			]
 		},
 		initialData: `
-			<h2>Congratulations on being assigned to this critical aeronautical engineering task! ✈️</h2>
-			<p>
-				You are responsible for enhancing our aircraft's design and performance through innovative engineering solutions. 
-				Your work will significantly impact our mission to advance aerospace technology.
-			</p>
-			<h3>Job Information</h3>
-			<table style="width: 100%; border: 1px solid #ccc; border-collapse: collapse;">
-				<tr>
-					<th style="border: 1px solid #ccc; padding: 8px; background-color: #f2f2f2;">Item</th>
-					<th style="border: 1px solid #ccc; padding: 8px; background-color: #f2f2f2;">Details</th>
-				</tr>
-				<tr>
-					<td style="border: 1px solid #ccc; padding: 8px;">Job Title</td>
-					<td style="border: 1px solid #ccc; padding: 8px;">Aeronautical Engineer</td>
-				</tr>
-				<tr>
-					<td style="border: 1px solid #ccc; padding: 8px;">Department</td>
-					<td style="border: 1px solid #ccc; padding: 8px;">Aerospace Design & Engineering</td>
-				</tr>
-				<tr>
-					<td style="border: 1px solid #ccc; padding: 8px;">Project Start Date</td>
-					<td style="border: 1px solid #ccc; padding: 8px;">[Insert Start Date]</td>
-				</tr>
-				<tr>
-					<td style="border: 1px solid #ccc; padding: 8px;">Project Deadline</td>
-					<td style="border: 1px solid #ccc; padding: 8px;">[Insert Deadline]</td>
-				</tr>
-				<tr>
-					<td style="border: 1px solid #ccc; padding: 8px;">Supervisor</td>
-					<td style="border: 1px solid #ccc; padding: 8px;">[Insert Supervisor Name]</td>
-				</tr>
-			</table>
-			<h3>What's next?</h3>
-			<ol>
-				<li>
-					<strong>Integrate Your Design into the Aircraft System:</strong> 
-					Begin by implementing the design improvements into the current aircraft system. 
-					Ensure that all modifications comply with safety and regulatory standards.
-				</li>
-				<li>
-					<strong>Explore Advanced Aeronautical Technologies:</strong> 
-					Research and experiment with cutting-edge aeronautical technologies. 
-					Consider materials, propulsion systems, and aerodynamics enhancements that could optimize the aircraft's performance.
-				</li>
-				<li>
-					<strong>Customize and Test:</strong> 
-					Tailor your design to meet specific mission requirements. 
-					Conduct rigorous testing in simulated and real-world environments to validate the design's effectiveness and safety.
-				</li>
-			</ol>
-			<p>
-				Keep pushing the boundaries of aeronautical engineering to achieve groundbreaking results. 
-				Your expertise is invaluable as we strive to innovate and lead in aerospace technology.
-			</p>
-			<h3>Helpful resources</h3>
-			<ul>
-				<li>📝 <a href="[link to Aircraft Design Manuals]">Aircraft Design Manuals</a></li>
-				<li>📕 <a href="[link to Aeronautical Engineering Documentation]">Aeronautical Engineering Documentation</a></li>
-				<li>⭐️ <a href="[link to Engineering GitHub Repository]">Engineering GitHub Repository</a></li>
-				<li>🏠 <a href="[link to Company's Aeronautical Engineering Homepage]">Company's Aeronautical Engineering Homepage</a></li>
-				<li>🧑‍💻 <a href="[link to Engineering Simulation Demos]">Engineering Simulation Demos</a></li>
-			</ul>
-			<h3>Need help?</h3>
-			<p>
-				Encountering challenges or need additional resources? 
-				Check the engineering support portal for troubleshooting tips or reach out to your supervisor for guidance. 
-				Your expertise is crucial to the success of this project, and we're here to support you every step of the way!
-			</p>
+			<h2>Job Information</h2><figure class="table" style="width:100%;"><table class="ck-table-resized" style="border:1px solid #ccc;"><colgroup><col style="width:37.37%;"><col style="width:4.72%;"><col style="width:53.19%;"><col style="width:4.72%;"></colgroup><thead><tr><th style="background-color:#f2f2f2;border:1px solid #ccc;padding:8px;">&nbsp;</th><th>&nbsp;</th><th style="background-color:#f2f2f2;border:1px solid #ccc;padding:8px;">&nbsp;</th><th>&nbsp;</th></tr></thead><tbody><tr><td style="border:1px solid #ccc;padding:8px;"><h6>JOB NO</h6></td><td>&nbsp;</td><td style="border:1px solid #ccc;padding:8px;"><h6>DATE RECEIVED:</h6></td><td>&nbsp;</td></tr><tr><td style="border:1px solid #ccc;padding:8px;"><h6>CUSTOMER</h6></td><td>&nbsp;</td><td style="border:1px solid #ccc;padding:8px;" colspan="2"><h6><strong>WORK AUTHORIZATION</strong></h6><h6>PLEASE CARRY OUT THE WORK SPECIFIED BELOW SUBJECT TO THE TERMS AND CONDITION OVERLEAF</h6></td></tr><tr><td style="border:1px solid #ccc;padding:8px;"><h6>AIRCRAFT&nbsp;</h6><h6>REGISTRATION</h6></td><td>&nbsp;</td><td style="border:1px solid #ccc;padding:8px;"><h6>INVOICE NO.</h6></td><td>&nbsp;</td></tr><tr><td><h6>DATE</h6></td><td>&nbsp;</td><td><h6>PAYMENT</h6></td><td>&nbsp;</td></tr><tr><td style="border:1px solid #ccc;padding:8px;"><h6>AIRCRAFT /&nbsp;</h6><h6>COMPONENT MODEL</h6></td><td>&nbsp;</td><td style="border:1px solid #ccc;padding:8px;">&nbsp;</td><td>&nbsp;</td></tr><tr><td style="border:1px solid #ccc;padding:8px;"><h6>AIRCRAFT / COMPONENT</h6><h6>SERIAL NO.</h6></td><td>&nbsp;</td><td style="border:1px solid #ccc;padding:8px;">&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><figure class="table"><table><tbody><tr><td><h6>ITEM</h6></td><td><h6>WORK SCOPE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h6></td></tr><tr><td><h6>1.</h6></td><td>&nbsp;</td></tr><tr><td><h6>2.</h6></td><td>&nbsp;</td></tr><tr><td><h6>3.</h6></td><td>&nbsp;</td></tr><tr><td><h6>4.</h6></td><td>&nbsp;</td></tr><tr><td><h6>5.</h6></td><td>&nbsp;</td></tr><tr><td><h6>6.</h6></td><td>&nbsp;</td></tr><tr><td><h6>7.</h6></td><td>&nbsp;</td></tr></tbody></table></figure>
 		`,
 		link: {
 			addTargetToExternalLinks: true,
@@ -221,12 +157,24 @@ export default function Docu() {
 		<div className='Appdocu'>
 			<h1 className="title"> Job Card </h1>
 			<div className="main-container">
-			 
 				<div className="editor-container editor-container_inline-editor" ref={editorContainerRef}>
 					<div className="editor-container__editor">
-						<div ref={editorRef}>{isLayoutReady && <CKEditor editor={InlineEditor} config={editorConfig} />}</div>
+						{isLayoutReady && (
+							<CKEditor
+								editor={InlineEditor}
+								config={editorConfig}
+								onChange={handleEditorDataChange}
+								ref={editorRef}
+							/>
+						)}
 					</div>
 				</div>
+				{/* <div className="html-output-card">
+					<h2>Editor HTML Output</h2>
+					<div className="html-output">
+						<pre>{editorData}</pre>
+					</div>
+				</div> */}
 			</div>
 		</div>
 	);
