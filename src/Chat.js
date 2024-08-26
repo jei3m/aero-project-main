@@ -23,12 +23,14 @@ const Chat = () => {
     // Replace double asterisks with <strong> tags for bold
     text = text.replace(/\*\*([^\*]+)\*\*/g, '<strong>$1</strong>');
   
-    // Replace single asterisks with <br /> for new lines
+    // Replace single asterisks followed by double asterisks with <br /> for new lines
+    text = text.replace(/\*([^\*]+)\*\*/g, '<br />$1<br />');
+  
+    // Replace remaining single asterisks with <br /> for new lines
     text = text.replace(/\*([^\*]+)\*/g, '<br />$1<br />');
   
     return text;
   };
-  
 
   useEffect(() => {
     const startChat = async () => {
