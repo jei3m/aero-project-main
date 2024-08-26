@@ -41,6 +41,7 @@ import A320WorkView from "./components/View/Work/A320WorkView";
 import A380WorkView from "./components/View/Work/A380WorkView";
 import WorkView747 from "./components/View/Work/747WorkView";
 import Chat from "./Chat"
+import Docu from "./Docu";
 
 
 function App() {
@@ -99,6 +100,7 @@ function App() {
        <Route path="/a380workview" element={<A380WorkView/>}/>
        <Route path="/747workview" element={<WorkView747/>}/>
        <Route path="/chat" element={<Chat/>}/>
+       <Route path="/docu" element={<Docu/>}/>
        
       </Routes>
       </BrowserRouter>
