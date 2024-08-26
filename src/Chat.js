@@ -15,11 +15,15 @@ const Chat = () => {
   const API_KEY = process.env.REACT_APP_API_KEY; // Ensure this is set in Vercel environment variables
   const navigate = useNavigate();
 
-  // Utility function to sanitize the text
+  // Utility function to sanitize and format the text
   const sanitizeText = (text) => {
-    return text
-      .replace(/\*/g, '') // Remove all asterisks
-      .replace(/\{\{frac\}\}/g, ''); // Remove {{frac}} or replace with a suitable alternative
+    // Replace ## before text with <h1> tags for larger text
+    text = text.replace(/##\s*([^\n]+)/g, '<h3>$1</h3>');
+    // Replace double asterisks with <strong> tags for bold
+    text = text.replace(/\*\*([^\*]+)\*\*/g, '<strong>$1</strong>');
+    // Replace single asterisks with new lines
+    text = text.replace(/\*([^\*]+)\*/g, '<br />$1<br />');
+    return text;
   };
 
   useEffect(() => {
@@ -27,7 +31,7 @@ const Chat = () => {
       if (messages.length === 0) {
         try {
           const genAI = new GoogleGenerativeAI(API_KEY);
-          const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
+          const model = genAI.getGenerativeModel({model: "gemini-1.5-flash",});
           const prompt = "hello!";
           const result = await model.generateContent(prompt);
           const response = result.response;
@@ -61,7 +65,7 @@ const Chat = () => {
 
     try {
       const genAI = new GoogleGenerativeAI(API_KEY);
-      const model = genAI.getGenerativeModel({ model: "gemini-1.0-pro" });
+      const model = genAI.getGenerativeModel({model: "gemini-1.5-flash",});
       const prompt = userMessage.text;
       const result = await model.generateContent(prompt);
       const response = result.response;
@@ -89,51 +93,51 @@ const Chat = () => {
 
   return (
     <div className="chat-container">
-    <ToastContainer />
-    <div className="header">
-      <h2>Ask Aerobot!</h2>
-      <button className="back-button" onClick={goBack}>
-        <FontAwesomeIcon icon={faArrowLeft} />
-        Back
-      </button>
-    </div>
-    <div className="messages-container">
-      {messages.map((msg, index) => (
-        <div key={index} className={`message-container ${msg.user ? 'user' : 'ai'}`}>
-          {!msg.user && (
-            <img
-              src="/img/aerobot.png"
-              alt="profile"
-              className="profile-pic"
+      <ToastContainer />
+      <div className="header">
+        <h2>Ask Aerobot!</h2>
+        <button className="back-button" onClick={goBack}>
+          <FontAwesomeIcon icon={faArrowLeft} />
+          Back
+        </button>
+      </div>
+      <div className="messages-container">
+        {messages.map((msg, index) => (
+          <div key={index} className={`message-container ${msg.user ? 'user' : 'ai'}`}>
+            {!msg.user && (
+              <img
+                src="/img/aerobot.png"
+                alt="profile"
+                className="profile-pic"
+              />
+            )}
+            <div className={`message ${msg.user ? 'user' : 'ai'}`}
+              dangerouslySetInnerHTML={{ __html: msg.text }}
             />
-          )}
-          <div className={`message ${msg.user ? 'user' : 'ai'}`}>
-            {msg.text}
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+      <div className="input-container">
+        <input
+          className="message-input"
+          placeholder="Type a message"
+          onChange={(e) => setUserInput(e.target.value)}
+          value={userInput}
+          onKeyDown={(e) => e.key === "Enter" && sendMessage()}
+        />
+        <button
+          className="search-button"
+          onClick={sendMessage}
+          disabled={loading}
+        >
+          {loading ? (
+            <div className="loading-spinner"></div>
+          ) : (
+            <FontAwesomeIcon icon={faSearch} />
+          )}
+        </button>
+      </div>
     </div>
-    <div className="input-container">
-      <input
-        className="message-input"
-        placeholder="Type a message"
-        onChange={(e) => setUserInput(e.target.value)}
-        value={userInput}
-        onKeyDown={(e) => e.key === "Enter" && sendMessage()}
-      />
-      <button
-        className="search-button"
-        onClick={sendMessage}
-        disabled={loading}
-      >
-        {loading ? (
-          <div className="loading-spinner"></div>
-        ) : (
-          <FontAwesomeIcon icon={faSearch} />
-        )}
-      </button>
-    </div>
-  </div>
   );
 };
 
