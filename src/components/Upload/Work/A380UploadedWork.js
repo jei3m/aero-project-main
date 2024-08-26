@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Typography, Card, CardContent, Box, Button } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { useNavigate } from 'react-router-dom';
-import UploadedJobA320 from './A320UploadedWork';
+
 
 const UploadedWorkA380 = () => {
   const navigate = useNavigate();

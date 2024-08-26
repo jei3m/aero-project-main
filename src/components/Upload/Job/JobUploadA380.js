@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import for navigation
-import './FileUpload.css';
+import '../FileUpload.css';
 import { Button, Grid, Card, CardContent, Typography } from '@mui/material';
 import FileUploader from './FileUploader';
 
@@ -28,7 +28,7 @@ function JobFileUploadA380() {
 
   const onSaveHandler = () => {
     if (selectedFile) {
-      navigate('/747jobupload'); // Navigate to the next page
+      navigate('/a380jobupload'); // Navigate to the next page
     } else {
       alert('Please select a file before saving.');
     }

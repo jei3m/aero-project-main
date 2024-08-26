@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import for navigation
-import './FileUpload.css';
+import '../FileUpload.css';
 import { Button, Grid, Card, CardContent, Typography } from '@mui/material';
 import FileUploader from './FileUploader';
 

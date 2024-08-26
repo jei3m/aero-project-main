@@ -2,7 +2,7 @@ import { Button, IconButton } from "@mui/material";
 import React, { useRef, useState } from "react";
 import AttachmentIcon from "@mui/icons-material/Attachment";
 import DeleteIcon from "@mui/icons-material/Delete";
-import "./FileUploader.css";
+import "../FileUploader.css";
 
 function FileUploader(props) {
   const { onSelectFile, onDeleteFile, disabled } = props;
