@@ -17,14 +17,18 @@ const Chat = () => {
 
   // Utility function to sanitize and format the text
   const sanitizeText = (text) => {
-    // Replace ## before text with <h1> tags for larger text
+    // Replace ## with <h3> tags for larger text
     text = text.replace(/##\s*([^\n]+)/g, '<h3>$1</h3>');
+  
     // Replace double asterisks with <strong> tags for bold
     text = text.replace(/\*\*([^\*]+)\*\*/g, '<strong>$1</strong>');
-    // Replace single asterisks with new lines
+  
+    // Replace single asterisks with <br /> for new lines
     text = text.replace(/\*([^\*]+)\*/g, '<br />$1<br />');
+  
     return text;
   };
+  
 
   useEffect(() => {
     const startChat = async () => {
