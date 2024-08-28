@@ -38,7 +38,7 @@
     padding: 1rem;
     border: solid 1px lightgray;
     border-radius: 10px !important;
-    margin: auto; /* Center horizontally and vertically */
+    margin: auto; 
   }
   
   .MuiOutlinedInput-input {
@@ -54,7 +54,6 @@
     }
   }
   
-  /* Responsive adjustments */
   @media (max-width: 768px) {
     .app-form {
       width: 90%;

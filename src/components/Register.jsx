@@ -20,8 +20,8 @@ export const Register = (props) => {
     };
 
     return (
-        <div className="Appokform"> {/* Updated class name to match login */}
-            <div className="Appcardform"> {/* Updated class name to match login */}
+        <div className="Appokform"> 
+            <div className="Appcardform"> 
                 <div>
                     <img 
                         src="/img/alogo.png" 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import './Forms.css'; // Ensure this import is present to apply styles
+import './Forms.css'; 
 
 export const Login = (props) => {
     const [email, setEmail] = useState('');

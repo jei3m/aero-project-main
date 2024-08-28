@@ -6,114 +6,114 @@
   padding: 20px;
   box-sizing: border-box;
   width: 100%;
-  max-width: 1200px; /* Adjust max width as needed */
-  margin: 0 auto; /* Center the container */
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
 
-/* Lock Icon Position */
+
 .lock-icon-container {
-  position: absolute; /* Absolute position relative to the image-container */
-  top: 10px; /* Distance from the top */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Adjust for exact centering */
-  font-size: 30px; /* Adjust size as needed */
-  color: #333; /* Adjust color as needed */
-  z-index: 1000; /* Ensure the lock icon is above other content */
+  position: absolute; 
+  top: 10px; 
+  left: 50%; 
+  transform: translateX(-50%);
+  font-size: 30px; 
+  color: #333; 
+  z-index: 1000; 
 }
 
 .image-viewer {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: none; /* Remove background color */
-  border: none; /* Remove border if needed */
+  background: none; 
+  border: none; 
 }
 
 .carousel-image {
   width: 100%;
-  height: auto; /* Keeps the aspect ratio */
-  max-height: 80vh; /* Limits the height to 80% of the viewport height */
-  object-fit: contain; /* Ensures the image fits within its container */
+  height: auto; 
+  max-height: 80vh; 
+  object-fit: contain; 
 }
 
-/* Navigation buttons styles */
+
 .custom-arrow {
   position: absolute;
-  bottom: 10px; /* Position below the carousel */
+  bottom: 10px;
   font-size: 2em;
-  background: rgba(0, 0, 0, 0.5); /* Background color of the button */
-  color: white; /* Arrow color */
+  background: rgba(0, 0, 0, 0.5); 
+  color: white; 
   border: none;
   cursor: pointer;
   padding: 10px;
-  z-index: 1000; /* Ensure buttons are above the carousel */
+  z-index: 1000; 
 }
 
 .custom-arrow.left {
-  left: 10px; /* Adjust as needed */
+  left: 10px; 
 }
 
 .custom-arrow.right {
-  right: 10px; /* Adjust as needed */
+  right: 10px; 
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .carousel-image {
-    max-height: 60vh; /* Adjust as needed for smaller screens */
+    max-height: 60vh; 
   }
 
   .custom-arrow {
-    font-size: 1.5em; /* Adjust size for smaller screens */
+    font-size: 1.5em; 
   }
 
   .lock-icon-container {
-    font-size: 30px; /* Adjust size for smaller screens */
+    font-size: 30px; 
   }
 }
 
 @media (max-width: 480px) {
   .carousel-image {
-    max-height: 50vh; /* Further adjust for very small screens */
+    max-height: 50vh; 
   }
 
   .custom-arrow {
-    font-size: 1.2em; /* Further adjust size for very small screens */
+    font-size: 1.2em; 
   }
 
   .lock-icon-container {
-    font-size: 30px; /* Further adjust size for very small screens */
+    font-size: 30px; 
   }
 }
 
-/* New styles for Ask Aerobot button and text bubble */
+
 .ask-aerobot-container {
-  position: fixed; /* Fix position */
-  bottom: 30px; /* Increased bottom spacing */
-  right: 15px; /* Move closer to text bubble */
+  position: fixed; 
+  bottom: 30px; 
+  right: 15px; 
   display: flex;
   align-items: center;
-  gap: 10px; /* Space between button and bubble */
+  gap: 10px;
 }
 
 .ask-aerobot-button {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: transparent; /* Transparent background */
-  border: none; /* No border */
-  width: 80px; /* Size of the button */
-  height: 80px; /* Size of the button */
-  border-radius: 50%; /* Circular button */
+  background-color: transparent; 
+  border: none; 
+  width: 80px; 
+  height: 80px; 
+  border-radius: 50%; 
   text-decoration: none;
-  box-shadow: none; /* No shadow */
+  box-shadow: none; 
   cursor: pointer;
-  animation: pulse 1.5s infinite; /* Add pulse animation */
+  animation: pulse 1.5s infinite; 
 }
 
 .ask-aerobot-button img {
-  width: 100%; /* Fill the button */
-  height: 100%; /* Fill the button */
+  width: 100%; 
+  height: 100%; 
   border-radius: 30%;
   object-fit: contain !important; 
 }
@@ -132,19 +132,19 @@
 }
 
 .text-bubble {
-  background-color: #333; /* Dark background for the bubble */
+  background-color: #333; 
   color: white;
-  padding: 15px; /* Increased padding */
-  border-radius: 20px; /* Rounded corners */
-  margin-left: 1px; /* Closer to button */
-  margin-right: 10px; /* Closer to button */
-  font-size: 16px; /* Increased font size */
+  padding: 15px; 
+  border-radius: 20px; 
+  margin-left: 1px;
+  margin-right: 10px; 
+  font-size: 16px; 
   position: relative;
-  max-width: 250px; /* Increased max width */
-  text-align: center; /* Center text inside the bubble */
+  max-width: 250px; 
+  text-align: center; 
 }
 
-/* Removed the triangle arrow */
+
 .text-bubble::before {
   content: none;
 }

@@ -35,11 +35,6 @@ const JobAircraftView = () => {
           description=""
           />
           </a>
-
-
-        
-
-
       </div>
 
       </div>

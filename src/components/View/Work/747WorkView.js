@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './View.css'; // Include custom styles
+import './View.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,12 +16,12 @@ const WorkView747 = () => {
   ];
 
   const settings = {
-    dots: true, // Show navigation dots
+    dots: true, 
     infinite: imageUrls.length > 1,
-    speed: 500, // Transition speed
-    slidesToShow: 1, // Number of images to show at once
-    slidesToScroll: 1, // Number of images to scroll
-    arrows: false, // Disable default arrows
+    speed: 500, 
+    slidesToShow: 1, 
+    slidesToScroll: 1, 
+    arrows: false, 
     prevArrow: <button className="custom-arrow left">←</button>,
     nextArrow: <button className="custom-arrow right">→</button>,
   };
@@ -43,7 +43,6 @@ const WorkView747 = () => {
           </div>
         ))}
       </Slider>
-      {/* Add Chathead and Text Bubble */}
       <div className="ask-aerobot-container">
       <a href="/chat" className="ask-aerobot-button">
         <img

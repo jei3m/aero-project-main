@@ -2,7 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import './View.css'; // Include custom styles
+import './View.css'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLock } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,12 +16,12 @@ const A320WorkView = () => {
   ];
 
   const settings = {
-    dots: true, // Show navigation dots
+    dots: true, 
     infinite: imageUrls.length > 1,
-    speed: 500, // Transition speed
-    slidesToShow: 1, // Number of images to show at once
-    slidesToScroll: 1, // Number of images to scroll
-    arrows: false, // Disable default arrows
+    speed: 500, 
+    slidesToShow: 1, 
+    slidesToScroll: 1, 
+    arrows: false,
     prevArrow: <button className="custom-arrow left">←</button>,
     nextArrow: <button className="custom-arrow right">→</button>,
   };
@@ -32,25 +32,26 @@ const A320WorkView = () => {
         <FontAwesomeIcon icon={faLock} className="lock-icon" />
       </div>
       <h1>View A320 Work Card</h1>
-      <Slider {...settings}>
-        {imageUrls.map((url, index) => (
-          <div key={index} className="image-viewer">
-            <img
-              src={url}
-              alt={`View ${index}`}
-              className="carousel-image"
-            />
-          </div>
-        ))}
-      </Slider>
-      {/* Add Chathead and Text Bubble */}
+      <div className="carousel-container">
+        <Slider {...settings}>
+          {imageUrls.map((url, index) => (
+            <div key={index} className="image-viewer">
+              <img
+                src={url}
+                alt={`View ${index}`}
+                className="carousel-image"
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
       <div className="ask-aerobot-container">
-      <a href="/chat" className="ask-aerobot-button">
-        <img
-              src="/img/askaero.png"
-              alt="profile"
-              className="profile-pic"
-            />
+        <a href="/chat" className="ask-aerobot-button">
+          <img
+            src="/img/askaero.png"
+            alt="profile"
+            className="profile-pic"
+          />
         </a>
         <div className="text-bubble">
           Ask Aerobot!

@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
-import './Pdf.css'; // Include custom styles
+import './Pdf.css'; 
 
 const Pdf = () => {
-  const imageUrl = '/img/jobcontent.png'; // Update with your image file path
+  const imageUrl = '/img/jobcontent.png'; 
   const [scale, setScale] = useState(1);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const containerRef = useRef(null);
@@ -10,7 +10,7 @@ const Pdf = () => {
   const handleWheel = (e) => {
     e.preventDefault();
     const zoom = e.deltaY > 0 ? 0.9 : 1.1;
-    setScale(prevScale => Math.min(Math.max(prevScale * zoom, 1), 3)); // Limits scale between 1x and 3x
+    setScale(prevScale => Math.min(Math.max(prevScale * zoom, 1), 3)); 
   };
 
   const handleMouseDown = (e) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Grid.css'; // Make sure to create this CSS file for styling
+import './Grid.css'; 
 import { Card } from "./Card";
 
 const JobWork = () => {

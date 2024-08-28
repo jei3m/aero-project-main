@@ -12,12 +12,11 @@ const A380JobView = () => {
   ];
 
   const settings = {
-    dots: true, // Show navigation dots
-    infinite: imageUrls.length > 1, // Disable infinite loop if only one image
-    speed: 500, // Transition speed
-    slidesToShow: 1, // Number of images to show at once
-    slidesToScroll: 1, // Number of images to scroll
-    arrows: true, // Enable custom arrows
+    dots: true, 
+    infinite: imageUrls.length > 1, 
+    speed: 500, 
+    slidesToShow: 1, 
+    arrows: true, 
     prevArrow: <button className="custom-arrow left">←</button>,
     nextArrow: <button className="custom-arrow right">→</button>,
   };
@@ -39,7 +38,6 @@ const A380JobView = () => {
           </div>
         ))}
       </Slider>
-      {/* Add Chathead and Text Bubble */}
       <div className="ask-aerobot-container">
         <a href="/chat" className="ask-aerobot-button">
           <img

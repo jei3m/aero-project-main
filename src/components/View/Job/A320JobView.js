@@ -12,22 +12,21 @@ const A320JobView = () => {
   ];
 
   const settings = {
-    dots: true, // Show navigation dots
-    infinite: imageUrls.length > 1, // Disable infinite loop if only one image
-    speed: 500, // Transition speed
-    slidesToShow: 1, // Number of images to show at once
-    slidesToScroll: 1, // Number of images to scroll
-    arrows: true, // Enable custom arrows
+    dots: true, 
+    infinite: imageUrls.length > 1, 
+    speed: 500, 
+    slidesToShow: 1, 
+    arrows: true, 
     prevArrow: <button className="custom-arrow left">←</button>,
     nextArrow: <button className="custom-arrow right">→</button>,
   };
 
   return (
     <div className="image-container">
+      <h1>View A320 Job Card</h1>
       <div className="lock-icon-container">
         <FontAwesomeIcon icon={faLock} className="lock-icon" />
       </div> 
-      <h1>View A320 Job Card</h1>
       <Slider {...settings}>
         {imageUrls.map((url, index) => (
           <div key={index} className="image-viewer">
@@ -39,7 +38,6 @@ const A320JobView = () => {
           </div>
         ))}
       </Slider>
-      {/* Add Chathead and Text Bubble */}
       <div className="ask-aerobot-container">
         <a href="/chat" className="ask-aerobot-button">
           <img

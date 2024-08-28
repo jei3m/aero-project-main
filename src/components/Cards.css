@@ -13,20 +13,20 @@
   }
   
   .cards-row .card {
-    flex: 1 1 calc(33.333% - 20px); /* 3 cards per row, adjust as needed */
+    flex: 1 1 calc(33.333% - 20px); 
     max-width: calc(33.333% - 20px);
   }
   
   @media (max-width: 1200px) {
     .cards-row .card {
-      flex: 1 1 calc(50% - 20px); /* 2 cards per row for medium screens */
+      flex: 1 1 calc(50% - 20px); 
       max-width: calc(50% - 20px);
     }
   }
   
   @media (max-width: 768px) {
     .cards-row .card {
-      flex: 1 1 100%; /* 1 card per row for small screens */
+      flex: 1 1 100%; 
       max-width: 100%;
     }
   }
