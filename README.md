@@ -1,6 +1,6 @@
 # AEfficient
 
-AEfficient is a modern frontend React website designed to deliver an engaging and interactive user experience. The site integrates Gemini AI to enhance functionality and includes several key features such as PDF embedding, file upload capabilities, and robust viewing functions.
+AEfficient is a modern frontend React website designed to deliver an engaging and interactive user experience. The site integrates Gemini AI to enhance functionality and includes several key features such as document editing, file upload capabilities, and consistent viewing functions.
 
 ## Features
 
