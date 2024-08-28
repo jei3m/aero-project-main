@@ -27,13 +27,6 @@ AEfficient is a modern frontend React website designed to deliver an engaging an
 
 To get started with the AEfficient project, follow these steps:
 
-### Prerequisites
-
-Make sure you have the following installed:
-
-- [ReactJS](https://reactjs.org/): The library used for building the user interface.
-- [npm](https://www.npmjs.com/): Package manager for managing project dependencies (comes with Node.js).
-
 ### Installation
 
 1. **Clone the Repository**:
