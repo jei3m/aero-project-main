@@ -1,6 +1,6 @@
 # AEfficient
 
-AEfficient is a modern frontend React website designed to deliver an engaging and interactive user experience. The site integrates Gemini AI to enhance functionality and includes several key features such as PDF embedding, file upload capabilities, and robust viewing functions.
+AEfficient is a modern frontend React website designed to deliver an engaging and interactive user experience. The site integrates Gemini AI to enhance functionality and includes several key features such as document editing, file upload capabilities, and consistent viewing functions.
 
 ## Features
 
@@ -8,10 +8,10 @@ AEfficient is a modern frontend React website designed to deliver an engaging an
   - Leverage the power of Gemini AI for enhanced interactions and dynamic features.
   - Integrate AI-driven insights and functionality seamlessly into your application.
 
-- **PDF Embed**:
-  - View and interact with PDF documents directly within the application.
-  - Utilizes `Google Drive` for rendering PDFs and `.css` for styling.
-  - Provides a smooth, in-browser PDF viewing experience.
+- **Document Edit**:
+  - View and interact with documents directly within the application.
+  - Utilizes `CKEditor5` for rendering documents and `.css` for styling.
+  - Provides a smooth, in-browser editing experience.
 
 - **File Upload Component**:
   - Easy-to-use interface for file uploads.
@@ -27,13 +27,6 @@ AEfficient is a modern frontend React website designed to deliver an engaging an
 
 To get started with the AEfficient project, follow these steps:
 
-### Prerequisites
-
-Make sure you have the following installed:
-
-- [ReactJS](https://reactjs.org/): The library used for building the user interface.
-- [npm](https://www.npmjs.com/): Package manager for managing project dependencies (comes with Node.js).
-
 ### Installation
 
 1. **Clone the Repository**:
@@ -42,7 +35,7 @@ Make sure you have the following installed:
 
 2. **Navigate to Project Directory**:
 
-   Change to the project directory: `cd aefficient`.
+   Change to the project directory: `cd aefficient` (depending on which directory).
 
 3. **Install Dependencies**:
 
@@ -54,11 +47,11 @@ Make sure you have the following installed:
 
 ## Components Overview
 
-### PDF Embed
+### Document Edit
 
-- **Purpose**: Allows users to view and interact with PDF documents within the application.
-- **Implementation**: Uses `pdf.js` for rendering and `pdf.css` for custom styling.
-- **Features**: Zoom, navigation, and text selection within the PDF viewer.
+- **Purpose**: Allows users to view and interact with documents within the application.
+- **Implementation**: Uses `CKEditor5` for rendering and `.css` for custom styling.
+- **Features**: Text selection, text edit, styles, and also tables within the PDF viewer.
 
 ### File Upload Component
 
