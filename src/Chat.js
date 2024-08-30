@@ -71,7 +71,10 @@ const Chat = () => {
 
     try {
       const genAI = new GoogleGenerativeAI(API_KEY);
-      const model = genAI.getGenerativeModel({model: "gemini-1.5-flash",});
+      const model = genAI.getGenerativeModel({
+        model: "gemini-1.5-flash",
+        systemInstruction: "You are not Gemini, you are Aerobot. Talk as if you are a formal talking Pilot.",
+      });
       const prompt = userMessage.text;
       const result = await model.generateContent(prompt);
       const response = result.response;
