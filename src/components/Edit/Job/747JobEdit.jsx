@@ -1,8 +1,8 @@
+// Importing necessary components
 import { useState, useEffect, useRef } from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import 'ckeditor5/ckeditor5.css';
-import '../Docu.css';
-
+import '../Docu.css'; 	
 
 import {
 	InlineEditor,
@@ -26,7 +26,7 @@ import {
 	TextTransformation,
 	Underline,
 	Undo
-} from 'ckeditor5';
+} from 'ckeditor5'; // Importing CKEditor plugins
 
 export default function JobEdit747() {
 	const editorContainerRef = useRef(null);
@@ -36,14 +36,14 @@ export default function JobEdit747() {
 
 	useEffect(() => {
 		setIsLayoutReady(true);
-
 		return () => setIsLayoutReady(false);
 	}, []);
 
 	const handleEditorDataChange = (event, editor) => {
-		setEditorData(editor.getData());
+		setEditorData(editor.getData()); // Capturing the editor data on change
 	};
 
+	// CKEditor configuration
 	const editorConfig = {
 		toolbar: {
 			items: [
@@ -89,51 +89,117 @@ export default function JobEdit747() {
 		],
 		heading: {
 			options: [
-				{
-					model: 'paragraph',
-					title: 'Paragraph',
-					class: 'ck-heading_paragraph'
-				},
-				{
-					model: 'heading1',
-					view: 'h1',
-					title: 'Heading 1',
-					class: 'ck-heading_heading1'
-				},
-				{
-					model: 'heading2',
-					view: 'h2',
-					title: 'Heading 2',
-					class: 'ck-heading_heading2'
-				},
-				{
-					model: 'heading3',
-					view: 'h3',
-					title: 'Heading 3',
-					class: 'ck-heading_heading3'
-				},
-				{
-					model: 'heading4',
-					view: 'h4',
-					title: 'Heading 4',
-					class: 'ck-heading_heading4'
-				},
-				{
-					model: 'heading5',
-					view: 'h5',
-					title: 'Heading 5',
-					class: 'ck-heading_heading5'
-				},
-				{
-					model: 'heading6',
-					view: 'h6',
-					title: 'Heading 6',
-					class: 'ck-heading_heading6'
-				}
+				{ model: 'paragraph', title: 'Paragraph', class: 'ck-heading_paragraph' },
+				{ model: 'heading1', view: 'h1', title: 'Heading 1', class: 'ck-heading_heading1' },
+				{ model: 'heading2', view: 'h2', title: 'Heading 2', class: 'ck-heading_heading2' },
+				{ model: 'heading3', view: 'h3', title: 'Heading 3', class: 'ck-heading_heading3' },
+				{ model: 'heading4', view: 'h4', title: 'Heading 4', class: 'ck-heading_heading4' },
+				{ model: 'heading5', view: 'h5', title: 'Heading 5', class: 'ck-heading_heading5' },
+				{ model: 'heading6', view: 'h6', title: 'Heading 6', class: 'ck-heading_heading6' }
 			]
 		},
+		// The template shown on the editor
 		initialData: `
-			<p>&nbsp;</p><figure class="table" style="width:100%;"><table class="ck-table-resized" style="border:1px solid #ccc;"><colgroup><col style="width:37.37%;"><col style="width:4.72%;"><col style="width:53.19%;"><col style="width:4.72%;"></colgroup><thead><tr><th style="background-color:#f2f2f2;border:1px solid #ccc;padding:8px;" colspan="4"><h3>Job Information</h3></th></tr></thead><tbody><tr><td style="border:1px solid #ccc;padding:8px;"><h6>JOB NO</h6></td><td>&nbsp;</td><td style="border:1px solid #ccc;padding:8px;"><h6>DATE RECEIVED:</h6></td><td>&nbsp;</td></tr><tr><td style="border:1px solid #ccc;padding:8px;"><h6>CUSTOMER</h6></td><td>&nbsp;</td><td style="border:1px solid #ccc;padding:8px;" colspan="2"><h6><strong>WORK AUTHORIZATION</strong></h6><h6>PLEASE CARRY OUT THE WORK SPECIFIED BELOW SUBJECT TO THE TERMS AND CONDITION OVERLEAF</h6></td></tr><tr><td style="border:1px solid #ccc;padding:8px;"><h6>AIRCRAFT&nbsp;</h6><h6>REGISTRATION</h6></td><td>&nbsp;</td><td style="border:1px solid #ccc;padding:8px;"><h6>INVOICE NO.</h6></td><td>&nbsp;</td></tr><tr><td><h6>DATE</h6></td><td>&nbsp;</td><td><h6>PAYMENT</h6></td><td>&nbsp;</td></tr><tr><td style="border:1px solid #ccc;padding:8px;"><h6>AIRCRAFT /&nbsp;</h6><h6>COMPONENT MODEL</h6></td><td>&nbsp;</td><td style="border:1px solid #ccc;padding:8px;">&nbsp;</td><td>&nbsp;</td></tr><tr><td style="border:1px solid #ccc;padding:8px;"><h6>AIRCRAFT / COMPONENT</h6><h6>SERIAL NO.</h6></td><td>&nbsp;</td><td style="border:1px solid #ccc;padding:8px;">&nbsp;</td><td>&nbsp;</td></tr></tbody></table></figure><figure class="table" style="width:100%;"><table class="ck-table-resized"><colgroup><col style="width:17.07%;"><col style="width:82.93%;"></colgroup><tbody><tr><td><h6>ITEM</h6></td><td><h6>WORK SCOPE &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h6></td></tr><tr><td><h6>1.</h6></td><td>&nbsp;</td></tr><tr><td><h6>2.</h6></td><td>&nbsp;</td></tr><tr><td><h6>3.</h6></td><td>&nbsp;</td></tr><tr><td><h6>4.</h6></td><td>&nbsp;</td></tr><tr><td><h6>5.</h6></td><td>&nbsp;</td></tr><tr><td><h6>6.</h6></td><td>&nbsp;</td></tr><tr><td><h6>7.</h6></td><td>&nbsp;</td></tr></tbody></table></figure>
+			<p>&nbsp;</p>
+			<figure class="table" style="width:100%;">
+				<table class="ck-table-resized" style="border:1px solid #ccc;">
+					<colgroup>
+						<col style="width:37.37%;">
+						<col style="width:4.72%;">
+						<col style="width:53.19%;">
+						<col style="width:4.72%;">
+					</colgroup>
+					<thead>
+						<tr>
+							<th style="background-color:#f2f2f2;border:1px solid #ccc;padding:8px;" colspan="4">
+								<h3>Job Information</h3>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td style="border:1px solid #ccc;padding:8px;"><h6>JOB NO</h6></td>
+							<td>&nbsp;</td>
+							<td style="border:1px solid #ccc;padding:8px;"><h6>DATE RECEIVED:</h6></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td style="border:1px solid #ccc;padding:8px;"><h6>CUSTOMER</h6></td>
+							<td>&nbsp;</td>
+							<td style="border:1px solid #ccc;padding:8px;" colspan="2">
+								<h6><strong>WORK AUTHORIZATION</strong></h6>
+								<h6>PLEASE CARRY OUT THE WORK SPECIFIED BELOW SUBJECT TO THE TERMS AND CONDITIONS OVERLEAF</h6>
+							</td>
+						</tr>
+						<tr>
+							<td style="border:1px solid #ccc;padding:8px;"><h6>AIRCRAFT&nbsp;</h6><h6>REGISTRATION</h6></td>
+							<td>&nbsp;</td>
+							<td style="border:1px solid #ccc;padding:8px;"><h6>INVOICE NO.</h6></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><h6>DATE</h6></td>
+							<td>&nbsp;</td>
+							<td><h6>PAYMENT</h6></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td style="border:1px solid #ccc;padding:8px;"><h6>AIRCRAFT /&nbsp;</h6><h6>COMPONENT MODEL</h6></td>
+							<td>&nbsp;</td>
+							<td style="border:1px solid #ccc;padding:8px;">&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td style="border:1px solid #ccc;padding:8px;"><h6>AIRCRAFT / COMPONENT</h6><h6>SERIAL NO.</h6></td>
+							<td>&nbsp;</td>
+							<td style="border:1px solid #ccc;padding:8px;">&nbsp;</td>
+							<td>&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+			</figure>
+			<figure class="table" style="width:100%;">
+				<table class="ck-table-resized">
+					<colgroup>
+						<col style="width:17.07%;">
+						<col style="width:82.93%;">
+					</colgroup>
+					<tbody>
+						<tr>
+							<td><h6>ITEM</h6></td>
+							<td><h6>WORK SCOPE</h6></td>
+						</tr>
+						<tr>
+							<td><h6>1.</h6></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><h6>2.</h6></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><h6>3.</h6></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><h6>4.</h6></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><h6>5.</h6></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><h6>6.</h6></td>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><h6>7.</h6></td>
+							<td>&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+			</figure>
 		`,
 		link: {
 			addTargetToExternalLinks: true,
@@ -148,15 +214,15 @@ export default function JobEdit747() {
 				}
 			}
 		},
-		placeholder: 'Type or paste your content here!',
+		placeholder: 'Type or paste your content here!', // Placeholder text for the editor
 		table: {
 			contentToolbar: ['tableColumn', 'tableRow', 'mergeTableCells', 'tableProperties', 'tableCellProperties']
 		}
 	};
 
 	return (
-		<div className='Appdocu'>
-			<h1 className="title"> Edit BOEING 747 Job Card </h1>
+		<div className='Appdocu'> {/* Main container for the document */}
+			<h1 className="title"> Edit BOEING 747 Job Card </h1> {/* Title for the page */}
 			<div className="main-container">
 				<div className="editor-container editor-container_inline-editor" ref={editorContainerRef}>
 					<div className="editor-container__editor">
